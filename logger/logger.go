@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/im-jinsu/easy-logging-level/utils/discord"
 )
 
 // Info : Service status
@@ -25,7 +27,12 @@ func ErrorAndSend(msg ...interface{}) {
 	log.Output(2, msgStr)
 	// send
 	if !isDevelop() {
-
+		s := new(discord.MsgBlock)
+		s.Content = msgStr
+		s.Username = "Logger Notice"
+		if err := s.Send(); err != nil {
+			log.Println(err)
+		}
 	}
 }
 

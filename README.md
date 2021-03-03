@@ -24,10 +24,16 @@ func main() {
 }
 ```  
 ## Level  
-값 | 의미
+Function | Description
 ---|---:
-Info | 
-Error | 
-ErrorAndSend | 
-Fatal | 
-Debug |  
+Info | Service status logging
+Error | Default error logging
+ErrorAndSend | Error logging and send discord message
+Fatal | Very severe error, logging and the program terminated
+Debug | Logging in develop environment only  
+  
+## Environment variable  
+Name | Description
+---|---:
+LOGGER_ESAY_LEVEL_DISCORDURL | Discord Webhook URL for notice
+LOGGER_ESAY_LEVEL_ISDEV | Determine if in development environment  

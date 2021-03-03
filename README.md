@@ -25,7 +25,7 @@ func main() {
 ```  
 ## Level  
 Function | Description
----|---:
+:---:|:---
 Info | Service status logging
 Error | Default error logging
 ErrorAndSend | Error logging and send discord message
@@ -34,6 +34,6 @@ Debug | Logging in develop environment only
   
 ## Environment variable  
 Name | Description
----|---:
+:---:|:---
 LOGGER_ESAY_LEVEL_DISCORDURL | Discord Webhook URL for notice
 LOGGER_ESAY_LEVEL_ISDEV | Determine if in development environment  

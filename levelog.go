@@ -1,28 +1,28 @@
-package logger
+package levelog
 
 import (
 	"fmt"
 	"log"
 	"os"
 
-	"github.com/im-jinsu/easy-logging-level/utils/discord"
+	"github.com/im-jinsu/levelog/utils/discord"
 )
 
 // Info : Service status
 func Info(msg ...interface{}) {
-	log.Output(2, fmt.Sprintf("Info %s",
+	log.Output(2, fmt.Sprintf("[Info] %s",
 		fmt.Sprintln(msg...)))
 }
 
 // Error : Default error logging
 func Error(msg ...interface{}) {
-	log.Output(2, fmt.Sprintf("ERR %s",
+	log.Output(2, fmt.Sprintf("[ERR] %s",
 		fmt.Sprintln(msg...)))
 }
 
 // ErrorAndSend : Error logging and send notice
 func ErrorAndSend(msg ...interface{}) {
-	msgStr := fmt.Sprintf("ERR %s",
+	msgStr := fmt.Sprintf("[ERR] %s",
 		fmt.Sprintln(msg...))
 	log.Output(2, msgStr)
 	// send
@@ -46,13 +46,13 @@ func Fatal(msg ...interface{}) {
 // Debug : Logging in develop environment only
 func Debug(msg ...interface{}) {
 	if isDevelop() {
-		log.Output(2, fmt.Sprintf("Debug %s",
+		log.Output(2, fmt.Sprintf("[Debug] %s",
 			fmt.Sprintln(msg...)))
 	}
 }
 
 func isDevelop() bool {
-	if isdev := os.Getenv("LOGGER_ESAY_LEVEL_ISDEV"); isdev == "false" {
+	if isdev := os.Getenv("LEVELOG_ISDEV"); isdev == "false" {
 		return false
 	}
 	return true

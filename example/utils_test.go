@@ -3,7 +3,7 @@ package example_test
 import (
 	"fmt"
 
-	"github.com/im-jinsu/easy-logging-level/utils/discord"
+	"github.com/im-jinsu/levelog/utils/discord"
 )
 
 func TestDiscord() {

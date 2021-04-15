@@ -17,8 +17,8 @@ type MsgBlock struct {
 // Send : Send Discord
 func (data *MsgBlock) Send() error {
 	var discordWebhookURL string
-	if discordWebhookURL = os.Getenv("LOGGER_ESAY_LEVEL_DISCORDURL"); discordWebhookURL == "" {
-		return errors.New("Please check your environment variables. [LOGGER_ESAY_LEVEL_DISCORDURL]")
+	if discordWebhookURL = os.Getenv("LEVELOG_DISCORDURL"); discordWebhookURL == "" {
+		return errors.New("Please check your environment variables. [LEVELOG_DISCORDURL]")
 	}
 
 	pBytes, _ := json.Marshal(data)

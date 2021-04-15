@@ -1,10 +1,10 @@
-# easy-logging-level
-Easy to design logging level with standard logger
+# levelog  
+Easy to design logging level with **standard logger**
 
 ## Getting Started
 To install the library, run:  
 ```
-go get github.com/im-jinsu/easy-logging-level/logger
+go get github.com/im-jinsu/levelog
 ```  
 The following is a simple example which logging with standard logger
 ```go
@@ -13,14 +13,14 @@ package main
 import (
 	"log"
 
-	"github.com/im-jinsu/easy-logging-level/logger"
+	"github.com/im-jinsu/levelog"
 )
 
 func main() {
 	// Set stdlogger with lumberjack
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 
-	logger.Info("hello world")
+	levelog.Info("hello world")
 }
 ```  
 ## Level  
@@ -35,5 +35,5 @@ Debug | Logging in develop environment only
 ## Environment variable  
 Name | Description
 :---:|:---
-LOGGER_ESAY_LEVEL_DISCORDURL | Discord Webhook URL for notice
-LOGGER_ESAY_LEVEL_ISDEV | Determine if in development environment  
+LEVELOG_DISCORDURL | Discord Webhook URL for notice
+LEVELOG_ISDEV | Determine if in development environment  

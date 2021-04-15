@@ -7,11 +7,11 @@ import (
 	"os"
 	"testing"
 
-	"github.com/im-jinsu/easy-logging-level/logger"
+	"github.com/im-jinsu/levelog"
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
-// TestLogger : Test logger package
+// TestLogger : Test levelog package
 func TestLogger(t *testing.T) {
 	// Set stdlogger with lumberjack
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
@@ -22,11 +22,11 @@ func TestLogger(t *testing.T) {
 		MaxAge:     5, //days
 	})
 
-	logger.Info("1. logger.Info")
-	logger.Error("2. logger.Error")
-	logger.ErrorAndSend("3. logger.ErrorAndSend")
-	logger.Debug("4. logger.Debug")
-	// logger.Fatal("Cannot test fatal")
+	levelog.Info("1. levelog.Info")
+	levelog.Error("2. levelog.Error")
+	levelog.ErrorAndSend("3. levelog.ErrorAndSend")
+	levelog.Debug("4. levelog.Debug")
+	// levelog.Fatal("Cannot test fatal")
 
 	if bytes, err := ioutil.ReadFile("./test.log"); err != nil {
 		panic(err)

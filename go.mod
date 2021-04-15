@@ -1,4 +1,4 @@
-module github.com/im-jinsu/easy-logging-level
+module github.com/im-jinsu/levelog
 
 go 1.14
 
